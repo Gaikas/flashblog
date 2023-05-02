@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title%}
+Все статьи
+{%endblock%}
+
+{%block body%}
+    <div class="container">
+        <h1>Все статьи на сайте</h1>
+
+        {% for i in articles %}
+            <div class = "container">
+                <div class = "container alert alert-info border-top">
+                    <h1>Название статьи </h1>{{i.title}}<br>
+                </div>
+                <div class = "container alert">
+                    <h3>Введение </h3>{{i.intro}}<br>
+                </div>
+                <div class ="container alert">
+                    <h5>Статья </h5>{{i.text}}<br>
+                </div>
+            </div>
+        {%endfor%}
+    </div>
+
+{% endblock%}
