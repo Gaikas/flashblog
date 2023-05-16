@@ -8,14 +8,18 @@
     <div class="container">
         <h1>Все статьи на сайте</h1>
 
-        {% for i in articles %}
+    {% if articles|length >0 %}
+        {% for i in articles%}
             <div class = "alert alert-info">
                 <h2>{{i.title}}</h2>
                 <p>{{i.intro}}</p>
                 <p><b>Дата: {{i.date.date()}}</b></p>
-                <button class="btn btn-warning">Читать статью</button>
+                <a href="/posts/{{i.id}}" class="btn btn-warning">Читать статью</a>
             </div>
         {%endfor%}
+    {%else%}
+        <p>Статей на сайте нет</p>
+    {%endif%}
     </div>
 
 {% endblock%}
